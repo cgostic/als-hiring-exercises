@@ -11,14 +11,12 @@ _Exercise 1_ takes in three provided CRM data sets and returns a cleaned datafra
 
 **Exercise 1**
 
-- Constituents without recorded e-mail addresses should not be included in the final table.
-  - Subscription data cannot be linked to these constituents (`cons_email_id` is the linking key) so there is little value to displaying these records in the final result.
-- Recorded e-mail is the primary form of identification for the final result.
-  - Constituents with a recorded e-mail addresses that do not appear in the constituent data are included in the final result and have `source == NaN`.
+- Constituents without recorded e-mail addresses should be excluded.
+  - Subscription data cannot be linked to constituents without e-mail addresses (`cons_email_id` is the linking key) so there is little value to displaying these records in the final result.
+- All contituents with recorded e-mail addresses should be included in the final result
+  - Constituents with a recorded e-mail addresses that do not appear in the constituent data will appear in the final result with `source == NaN`.
 - `created_dt` should be the earliest recorded `create_dt` across the constituent and e-mail data.
-  - The earliest date varies between these columns for each record.
 - `updated_dt` should be the latest recorded `modified_dt` across the constituent, e-mail, and subscription data.
-  - The latest date varies between these columns for each record.
 - Constituents with a recorded e-mail that do not appear in the subscription table are of interest despite the misssing indication of chapter designation.
   - It's noted that (1) we're only interested in subscription status for constituents with `chapter_id == 1` and that (2) constituents whose e-mails do not appear in the subscription data are still subscribed. This indicates that the constituents whose e-mails do not appear in the subscription data are still of interest, and these constituents appear in the final result with `chapter_id = NaN`.
   
