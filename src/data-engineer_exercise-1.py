@@ -23,6 +23,8 @@ import pandas as pd
 import datetime as dt
 pd.options.mode.chained_assignment = None
 
+print("########### Beginning data-engineer_exercise-1.py ###########")
+
 ###### DATA SOURCES ######
 print("Importing data...")
 # Constituent data
@@ -116,9 +118,8 @@ crm_df = crm_df.drop(columns = ['create_dt_x', 'create_dt_y', 'modified_dt_x',
                                 'cons_email_id', 'chapter_id'])
 
 # Export to csv
-crm_df.to_csv('results/people.csv', 
+crm_df.to_csv('people.csv', 
               header=crm_df.columns.tolist(), 
               index=False)
 
-print(r"Processing Complete! View the people.csv file"
-      r" in the `results` folder")
+print(r"Processing Complete! View the created/updated people.csv file")

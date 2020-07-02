@@ -6,11 +6,10 @@ A notebook with a walkthrough of the process behind creating
 this script is included in the `EDA` directory of this repository.
 
 Input data is created during Exercise 1 and stored in
-the `results` directory:
+the root of this repository:
 - people.csv
 
-Output is saved to the `results` directory of
-this repository as a .csv:
+Output is saved to the root of this repository as a .csv:
 - acquisition_facts.csv
 
 Main assumptions are listed in the README of this repository.
@@ -19,10 +18,11 @@ Main assumptions are listed in the README of this repository.
 import pandas as pd
 import datetime as dt
 
+print("########### Beginning data-engineer_exercise-2.py ###########")
 ###### DATA SOURCES ######
 print("Reading in data sources...")
 # Data created during exercise 1
-people_data = pd.read_csv('../results/people.csv', parse_dates=['created_dt'])
+people_data = pd.read_csv('people.csv', parse_dates=['created_dt'])
 
 ###### BEGIN SCRIPT ######
 print("Parsing dates...")
@@ -39,8 +39,8 @@ acq_data = (people_data.groupby('cal_date')['created_dt']
                              'created_dt':'acquisitions'}))
 print('Exporting to csv...')
 # Export to csv
-acq_data.to_csv('../results/acquision_facts.csv', 
+acq_data.to_csv('acquision_facts.csv', 
                 header=acq_data.columns.tolist(), 
                 index=False)
 
-print("Processing complete! View the `acquisition_facts.csv file in the `results` folder.")
+print("Processing complete! View the created/updated `acquisition_facts.csv file.")
