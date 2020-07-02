@@ -43,7 +43,7 @@ The following scripts are saved in the `src` directory:
 
 ### Outputs
 
-The following files are saved in the `results` directory:
+The following files are saved in root directory (as instructed):
 
 - people.csv
 - acquisition_facts.csv
