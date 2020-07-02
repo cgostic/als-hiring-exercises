@@ -39,7 +39,7 @@ acq_data = (people_data.groupby('cal_date')['created_dt']
                              'created_dt':'acquisitions'}))
 print('Exporting to csv...')
 # Export to csv
-acq_data.to_csv('acquision_facts.csv', 
+acq_data.to_csv('acquisition_facts.csv', 
                 header=acq_data.columns.tolist(), 
                 index=False)
 
