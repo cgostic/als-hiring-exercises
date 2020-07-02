@@ -50,13 +50,18 @@ The following files are saved in the `results` directory:
 
 ![](img/als_data_flow.png)
 
-## Directions to Run Scripts
+## Requirements and Instructions
 
 **Requirements:**
 
-These scripts require Python 3.0 +, as well as the following packages:
+These scripts require Python 3.7. A full `requirements.txt` file is available in the root of this repository.
+If using conda, the only additional package needed is `pandas==1.0.1`. It may be installed via the following command:
 
-- pandas==1.0.1
+```
+conda install pandas==1.0.1
+```
+
+**To Run Scripts:**
 
 1. Clone or download this repository
 2. Navigate to the root of this repository via the command line
